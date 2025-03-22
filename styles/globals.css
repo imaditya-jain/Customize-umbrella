@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#product .container-fluid .row {
+    height: 100vh;
+}
+
+#product .product-image .uploaded-image {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+#product .product-image .loader-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+}
+
+#product .product-details .upload .loader-icon,
+#product .product-image .loader-icon {
+    animation: spin 1s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#product .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#product .product-details .title h1 {
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+#product .product-details .variations {
+    display: flex;
+    gap: 1rem;
+}
+
+#product .product-details .variations .variant {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid;
+}
+
+#product .product-details .variations .variant.active {
+    border-width: 5px;
+}
+
+#product .product-details .variations .variant.variant-pink {
+    background-color: #cf006f;
+    border-color: #dd2d8e;
+}
+
+#product .product-details .variations .variant.variant-blue {
+    background-color: #00a3e2;
+    border-color: #7ed1f0;
+}
+
+#product .product-details .variations .variant.variant-yellow {
+    background-color: #fed141;
+    border-color: #f7dd86;
+
+}
+
+#product .product-details .description {}
+
+#product .product-details .description h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#product .product-details .description p {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#product .product-details .upload label {
+    width: 81%;
+    padding: 0.875rem;
+    letter-spacing: 1px;
+}
+
+#product .product-details .upload .remove-btn {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+    #product .container .row {
+        height: auto;
+        padding: 1rem;
+    }
+
+    #product .product-details .title h1 {
+        font-size: 2.5rem;
+    }
+
+    #product .product-details .description h2 {
+        font-size: 1.5rem;
+    }
+
+    #product .product-details .description p {
+        font-size: 1rem;
+    }
+
+    #product .product-details .upload label {
+        width: 100%;
+    }
+}
