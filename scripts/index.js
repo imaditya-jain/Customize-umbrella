@@ -7,7 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const uploadedImage = document.querySelector(".uploaded-image");
     const uploadBtn = document.querySelector(".upload-btn");
     const removeBtn = document.querySelector(".remove-btn");
-    const uploadText = uploadBtn.querySelector("p");
+    const uploadText = uploadBtn.querySelector(".upload p");
+    const initialLoader = document.querySelector(".initial-loader");
+    const content = document.querySelector(".container-fluid");
+
+    // Show content after a delay
+    setTimeout(() => {
+        initialLoader.classList.add("invisible");
+        content.classList.remove("invisible");
+    }, 2000);
 
     function showLoaders() {
         loaderIcons.forEach(loader => loader.classList.remove("invisible"));
@@ -57,6 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const file = event.target.files[0];
 
         if (file) {
+            // Implement file size validation
+            if (file.size > 1048576) {
+                alert("File size exceeds 1MB. Please upload a smaller image.");
+                fileInput.value = "";
+                return;
+            }
+
             showLoaders();
             uploadedImage.classList.add("invisible");
             umbrella.classList.add("invisible");
